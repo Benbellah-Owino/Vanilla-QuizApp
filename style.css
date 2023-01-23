@@ -27,7 +27,7 @@ button {
     border-radius: 15px;
     width: 150px;
     height: 40px;
-    border: 1px solid #16F1FF;
+    border: 1px solid #555EAB;
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
@@ -57,10 +57,9 @@ button {
     flex-direction: row;
     justify-content: space-between;
     align-content: center;
-    width: 50%;
+    width: 60%;
     height: 88%;
     text-align: center;
-
     padding: 3px;
 
 }
@@ -78,9 +77,13 @@ button {
 
 
 .title {
-    font-size: 25px;
+    font-size: 22px;
     color: #FCC250;
     text-align: center;
+    height: fit-content;
+    margin-top: 12px;
+    height: 80%;
+    width: 80%;
 }
 
 .links {
@@ -88,7 +91,7 @@ button {
     font-size: 13px;
     font-weight: 400;
     cursor: pointer;
-    width: 20%;
+    width: 30%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -119,13 +122,15 @@ button {
 
 
 .hundred {
-    background-color: #16F1FF;
-    color: #F3FEFF
+    background-color: #8E362C;
+    color: #FCC250;
+    border: #555EAB 1px solid;
 }
 
 .hundred:hover {
-    background-color: #01adb9;
-    box-shadow: 1px 4px 14px 0px #01adb9;
+    background-color: #FCC250;
+    color: #555EAB;
+    box-shadow: 1px 4px 14px 0px #FCC250;
 }
 
 .info_head {
@@ -140,9 +145,9 @@ button {
 
 
 .twenty:hover {
-    background-color: #01adb9;
-    color: #fefefe;
-    box-shadow: 0px 4px 14px 0px #01adb9;
+    background-color: #555eab;
+    color: #FCC250;
+    box-shadow: 0px 4px 14px 0px #555EAB;
 }
 
 /* Quiz Section */
@@ -156,8 +161,8 @@ button {
     flex-direction: column;
     height: fit-content;
     position: relative;
+    margin-top: 30px;
 }
-
 
 .quiz_header p {
     background-color: #FCC250;
@@ -167,6 +172,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .questions_tab {
@@ -191,8 +197,7 @@ button {
 
 .quizlets_inactive {
     width: 100%;
-    border: 1px solid #16F1FF;
-    background-color: #00e0f0;
+
     display: none;
 }
 
@@ -269,8 +274,8 @@ button {
 }
 
 #topic {
-    position: absolute;
-    left: 0;
+    /* position: absolute;
+    left: 0; */
     top: 30px;
     font-size: 18px;
     background-color: #1c1c1c;
@@ -301,7 +306,7 @@ button {
         border-radius: 15px;
         width: 150px;
         height: 40px;
-        border: 1px solid #16F1FF;
+        border: 1px solid #555EAB;
         font-size: 14px;
         font-weight: bold;
         cursor: pointer;
@@ -330,7 +335,7 @@ button {
         flex-direction: row;
         justify-content: space-between;
         align-content: center;
-        width: 25%;
+        width: 45%;
         height: 90%;
         text-align: center;
 
@@ -389,13 +394,15 @@ button {
 
 
     .hundred {
-        background-color: #16F1FF;
-        color: #F3FEFF
+        background-color: #8E362C;
+        color: #FCC250;
+        border: #555EAB 1px solid;
     }
 
     .hundred:hover {
-        background-color: #01adb9;
-        box-shadow: 1px 4px 14px 0px #01adb9;
+        background-color: #FCC250;
+        color: #555EAB;
+        box-shadow: 1px 4px 14px 0px #FCC250;
     }
 
     .info_head {
@@ -403,14 +410,12 @@ button {
         text-align: center;
         width: 100%;
         font-weight: 500;
-
     }
 
-
     .twenty:hover {
-        background-color: #01adb9;
-        color: #fefefe;
-        box-shadow: 0px 4px 14px 0px #01adb9;
+        background-color: #555eab;
+        color: #FCC250;
+        box-shadow: 0px 4px 14px 0px #555EAB;
     }
 
     /* Quiz Section */
@@ -430,7 +435,7 @@ button {
         background-color: #1c1c1c;
         font-size: 50px;
         font-weight: 600;
-        color: #01adb9;
+        color: #555EAB;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -479,7 +484,7 @@ button {
     .checkbox {
         width: 30px;
         height: 30px;
-        accent-color: #00e0f0;
+        color: #555EAB;
         cursor: pointer;
     }
 
@@ -487,3 +492,15 @@ button {
         background-color: #1c1c1c;
     }
 }
+
+@media only screen and (min-width:1024px) {
+    .logo {
+        width: 25%
+    }
+}
+
+/* @media only screen and (min-width:px) {
+    .logo {
+        width: 50%
+    }
+} */
