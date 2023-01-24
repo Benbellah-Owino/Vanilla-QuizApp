@@ -1,8 +1,13 @@
 const hundBtn = document.getElementById("hundred")
 const sc = document.getElementById("score")
 function openHundred() {
-    console.log("hunna")
+
     window.open("hundred.html")
+    window.close("landingpage.html")
+}
+function openTwenty() {
+
+    window.open("twenty.html")
     window.close("landingpage.html")
 }
 

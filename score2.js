@@ -14,6 +14,11 @@ let active = false;
 let set = 0;
 let state = [];
 
+let fb = document.getElementById("facebook")
+let twitter = document.getElementById("twitter");
+let instagram = document.getElementById("insta");
+
+
 
 
 let track = 1

@@ -265,8 +265,8 @@ button {
     position: fixed;
     top: 40%;
     left: auto;
-    height: 200px;
-    width: 300px;
+    height: 350px;
+    width: 400px;
     z-index: 5;
     background-color: #141414;
     text-align: center;
@@ -286,6 +286,13 @@ button {
     font-size: 48px;
     background-color: #141414;
 }
+
+.sm_linkc,
+.sm_linkc i {
+    background-color: #141414;
+}
+
+
 
 #topic {
     /* position: absolute;
@@ -309,6 +316,41 @@ button {
     display: none;
 } */
 
+
+.social_media {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+#insta:hover>i,
+#insta:hover {
+    background-image: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+#facebook:hover>i,
+#facebook:hover {
+    color: #4267B2;
+    transition: all 0.3s ease;
+}
+
+#twitter:hover>i,
+#twitter:hover {
+    color: #1DA1F2;
+    transition: all 0.3s ease;
+}
+
+.sm_linkc {
+    margin: 10px;
+}
 
 
 /* For Laptop */
