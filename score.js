@@ -6,8 +6,10 @@ const scorecard = document.getElementById("score_card")
 const sc_sc = document.getElementById("sc_score")
 const checkMarks = document.querySelectorAll(".checkbox");
 const score_close = document.getElementById("close");
-const topic = document.getElementById("topic")
+const topic = document.getElementById("topic");
+const drop_nav = document.getElementById("mob_links");
 
+let active = false;
 let arr = [];
 let set = 0;
 let state = [];
@@ -36,6 +38,8 @@ let arrc = [
         "8.Kissed on the neck?",
         "9.Kissed horizontally?",
         "10.Given or received a hickey/ love-bite?",
+    ],
+    [
         "11.Kissed or been kissed on the breast?",
         "12.Kissed someone below the belt?",
         "13.Spent the night with a member of the perferred sex?",
@@ -45,7 +49,9 @@ let arrc = [
         "17.Engaged in sexually/ naughty activity over video chat?",
         "18.Showered with a member of the perferred sex?",
         "19.Had sexual intercourse?",
-        "20.Ingested someone else's genital secretion?",
+        "20.Ingested someone else's genital secretion?"
+    ],
+    [
         "21.Kicked a roommate out to commit a sexual act?",
         "22.Sex number lol?",
         "23.Played a game involving stripping?",
@@ -82,7 +88,9 @@ let arrc = [
         "7.Been caught masturbating?",
         "8.Gone skinny-dipping?",
         "9.Purchased contraceptives?",
-        "10.Gone through the motions of intercourse while fully dressed?",
+        "10.Gone through the motions of intercourse while fully dressed?"
+    ],
+    [
         "11.Fondled or had your butt cheeks fondled?",
         "12.Fondled or had your breasts fondled?",
         "13.Fondled or had your genitals fondled?",
@@ -92,7 +100,9 @@ let arrc = [
         "17.Engaged in cunnilingus?",
         "18.Been walked in on while engaging in a sexual act?",
         "19.Seen a stripper?",
-        "20.Had sexual intercourse with non-participating third party in the same room?",
+        "20.Had sexual intercourse with non-participating third party in the same room?"
+    ],
+    [
         "21.Had an STI (Sexually Transmitted Infections)?",
         "22.Had a Sexually transmitted infections (STIs) test due to a reasonable suspicion?",
         "23.Made love in 4 or more positions?",
@@ -118,7 +128,9 @@ let arrc = [
         "7.Used methamphetamine, crack cocaine, PCP, horse tranquilizers or heroin?",
         "8.Faked sobriety to parents or teachers?",
         "9.Played a drinking game?",
-        "10.Had severe memory loss due to alcohol?",
+        "10.Had severe memory loss due to alcohol?"
+    ],
+    [
         "11.Gone streaking?",
         "12.Joined the mile high club?",
         "13.Attended an orgy?",
@@ -133,7 +145,6 @@ let arrc = [
         "22.Given oral?",
         "23.Made love from behind?",
     ]
-
 ]
 
 let arr_topics = [
@@ -181,36 +192,45 @@ function createQuizeTiles(question, div) {
     div.appendChild(node)
 }
 let div1 = createQuizlets(0);
-let div2 = createQuizlets(1);
-let div3 = createQuizlets(2);
-let div4 = createQuizlets(3);
 
 topic.textContent = arr_topics[0];
 div1.classList.remove("quizlets_inactive")
+
 
 //Adding the quiz 
 for (let i = 0; i < arrc[0].length; i++) {
     createQuizeTiles(arrc[0][i], div1);
 }
-for (let i = 0; i < arrc[1].length; i++) {
-    createQuizeTiles(arrc[1][i], div2);
-}
-for (let i = 0; i < arrc[2].length; i++) {
-    createQuizeTiles(arrc[2][i], div3);
-}
-for (let i = 0; i < arrc[3].length; i++) {
-    createQuizeTiles(arrc[3][i], div4);
+
+
+for (let x = 1; x <= arrc.length; x++) {
+    let div = createQuizlets(x);
+    if (x != arrc.length) {
+        for (let y = 0; y < arrc[x].length; y++) {
+            createQuizeTiles(arrc[x][y], div);
+        }
+    }
 }
 
 
 
 function nextPage() {
 
-    if (set != 3) {
+    if (set != 9) {
         let st = set
         state[st--].classList.add("quizlets_inactive")
         set++;
-        topic.textContent = arr_topics[set];
+        if (set < 3) {
+            topic.textContent = arr_topics[0];
+        }
+        else if (set == 3) {
+            topic.textContent = arr_topics[1];
+        } else if (set > 3 && set < 7) {
+            topic.textContent = arr_topics[2];
+        }
+        else {
+            topic.textContent = arr_topics[3];
+        }
         state[set].classList.remove("quizlets_inactive")
         console.log(state[set])
         console.log("next")
@@ -224,7 +244,17 @@ function previousPage() {
         let st = set
         state[st++].classList.add("quizlets_inactive")
         set--;
-        topic.textContent = arr_topics[set];
+        if (set < 3) {
+            topic.textContent = arr_topics[0];
+        }
+        else if (set == 3) {
+            topic.textContent = arr_topics[1];
+        } else if (set > 3 && set < 7) {
+            topic.textContent = arr_topics[2];
+        }
+        else {
+            topic.textContent = arr_topics[3];
+        }
         state[set].classList.remove("quizlets_inactive")
         console.log(state[set])
         console.log("next")
@@ -248,6 +278,7 @@ checkMarks.forEach(check => {
 //Submit
 
 submit.addEventListener("click", () => {
+    console.log("clicked")
     sc_sc.innerHTML = parseInt(sc.textContent);
     scorecard.style.display = "flex"
 })
@@ -255,3 +286,26 @@ submit.addEventListener("click", () => {
 score_close.addEventListener("click", () => {
     location.reload();
 })
+
+const nav_btn = document.getElementById("mob_lin")
+
+
+function dropNav() {
+
+    console.log(drop_nav.classList)
+    if (active == false) {
+        console.log("Conains a")
+        active = !active;
+        drop_nav.classList.add("mobile_links_active")
+        drop_nav.classList.remove("mobile_links")
+
+    } else if (active == true) {
+        active = !active;
+        drop_nav.classList.add("mobile_links")
+        drop_nav.classList.remove("mobile_links_active")
+
+    }
+
+}
+
+nav_btn.addEventListener("click", dropNav)

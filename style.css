@@ -17,8 +17,8 @@ body {
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    font-size: 13px;
-    ;
+    font-size: 14px;
+
 
 }
 
@@ -27,7 +27,7 @@ button {
     border-radius: 15px;
     width: 150px;
     height: 40px;
-    border: 1px solid #555EAB;
+    border: 1px solid #8E362C;
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
@@ -41,14 +41,16 @@ button {
     width: 100%;
     padding: 0px;
     background-color: #2c2c2c;
-    border-bottom: 0.5px solid #555EAB;
+    border-bottom: 0.5px solid #8E362C;
 
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 
 }
+
+
 
 
 
@@ -86,23 +88,30 @@ button {
     width: 80%;
 }
 
-.links {
+.mobile_links {
+    display: none;
+}
 
-    font-size: 13px;
-    font-weight: 400;
-    cursor: pointer;
-    width: 30%;
+
+.mobile_links_active {
+    position: absolute;
+    top: 10vh;
+    right: 5vw;
+    width: 80px;
+    height: 60px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+    margin: 2px;
+    border: #FCC250 0.5px solid;
+    box-shadow: 0px 3px 5px 5px #FCC250;
 }
 
-.link:hover {
-    border-bottom: #555EAB 0.5px solid;
-    box-shadow: 2px 1px #555EAB;
-    transition: all 0.3s ease;
+.mobile_links_active a {
+    margin-top: 10px;
+    text-decoration: underline;
 }
-
 
 /* Info Section */
 .info {
@@ -124,12 +133,12 @@ button {
 .hundred {
     background-color: #8E362C;
     color: #FCC250;
-    border: #555EAB 1px solid;
+    border: #8E362C 1px solid;
 }
 
 .hundred:hover {
     background-color: #FCC250;
-    color: #555EAB;
+    color: #8E362C;
     box-shadow: 1px 4px 14px 0px #FCC250;
 }
 
@@ -138,16 +147,16 @@ button {
     text-align: center;
     width: 100%;
     font-weight: 500;
-    color: #555EAB;
+    color: #8E362C;
     text-decoration: underline;
     font-weight: 500;
 }
 
 
 .twenty:hover {
-    background-color: #555eab;
+    background-color: #8E362C;
     color: #FCC250;
-    box-shadow: 0px 4px 14px 0px #555EAB;
+    box-shadow: 0px 4px 14px 0px #8E362C;
 }
 
 /* Quiz Section */
@@ -161,14 +170,14 @@ button {
     flex-direction: column;
     height: fit-content;
     position: relative;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .quiz_header p {
     background-color: #FCC250;
     font-size: 50px;
     font-weight: 600;
-    color: #555EAB;
+    color: #8E362C;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -183,7 +192,7 @@ button {
     width: 100%;
     height: 60px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: row;
     padding: 3px;
@@ -211,22 +220,27 @@ button {
     flex-direction: row;
 }
 
+.quiz_title {
+    text-align: left;
+}
+
 .checkbox {
     width: 30px;
     height: 30px;
-    accent-color: #555eab;
+    accent-color: #8E362C;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 .nav_btn {
-    background-color: #555EAB;
+    background-color: #8E362C;
     color: #FCC250;
-    border: #555EAB 1px solid;
+    border: #8E362C 1px solid;
 }
 
 .nav_btn:hover {
     background-color: #FCC250;
-    color: #555EAB;
+    color: #8E362C;
 
     transition: all ease 0.3s;
 }
@@ -234,20 +248,20 @@ button {
 #submit {
     background-color: #8E362C;
     color: #FCC250;
-    border: #555EAB 1px solid;
+    border: #8E362C 1px solid;
     transition: all ease 0.3s;
 
 }
 
 #submit:hover {
     background-color: #FCC250;
-    color: #555EAB;
+    color: #8E362C;
     transition: all ease 0.3s;
 }
 
 .score_card {
-    border: 1px solid #555EAB;
-    box-shadow: 0px 4px 14px 0px #555EAB;
+    border: 1px solid #8E362C;
+    box-shadow: 0px 4px 14px 0px #8E362C;
     position: fixed;
     top: 40%;
     left: auto;
@@ -281,6 +295,21 @@ button {
     background-color: #1c1c1c;
 }
 
+.mobile_nav {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .mobile_links {
+    display: none;
+} */
+
+
 
 /* For Laptop */
 @media only screen and (min-width: 768px) {
@@ -296,7 +325,7 @@ button {
     }
 
     .nav_btn:hover {
-        background-color: #16F1FF;
+        background-color: #FCC250;
         color: #2c2c2c;
         transition: all ease 0.3s;
     }
@@ -306,7 +335,7 @@ button {
         border-radius: 15px;
         width: 150px;
         height: 40px;
-        border: 1px solid #555EAB;
+        border: 1px solid #8E362C;
         font-size: 14px;
         font-weight: bold;
         cursor: pointer;
@@ -320,13 +349,21 @@ button {
         width: 100%;
         padding: 0px;
         background-color: #2c2c2c;
-        border-bottom: 0.5px solid #555EAB;
+        border-bottom: 0.5px solid #8E362C;
 
 
         display: flex;
         justify-content: space-between;
         align-items: center;
         color: #16F1FF;
+    }
+
+    .mobile_nav {
+        display: none
+    }
+
+    .mobile_links {
+        display: none;
     }
 
 
@@ -365,16 +402,21 @@ button {
         font-size: 16px;
         font-weight: 400;
         cursor: pointer;
-        width: 20%;
-        color: #FCC250
+        width: 30%;
+        color: #FCC250;
+        margin-left: 20px;
+        margin-right: 20px;
     }
+
+
 
     .link:hover,
     .link a:hover {
-        border-bottom: #555EAB 0.5px solid;
-        box-shadow: 2px 1px #555EAB;
-        color: #555EAB;
+        border-bottom: #8E362C 0.5px solid;
+        box-shadow: 2px 1px #8E362C;
+        color: #8E362C;
         transition: all 0.3s ease;
+
     }
 
 
@@ -396,12 +438,12 @@ button {
     .hundred {
         background-color: #8E362C;
         color: #FCC250;
-        border: #555EAB 1px solid;
+        border: #8E362C 1px solid;
     }
 
     .hundred:hover {
         background-color: #FCC250;
-        color: #555EAB;
+        color: #8E362C;
         box-shadow: 1px 4px 14px 0px #FCC250;
     }
 
@@ -413,9 +455,9 @@ button {
     }
 
     .twenty:hover {
-        background-color: #555eab;
+        background-color: #8E362C;
         color: #FCC250;
-        box-shadow: 0px 4px 14px 0px #555EAB;
+        box-shadow: 0px 4px 14px 0px #8E362C;
     }
 
     /* Quiz Section */
@@ -427,7 +469,8 @@ button {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        height: fit-content
+        height: fit-content;
+        margin-top: 10px;
     }
 
 
@@ -435,7 +478,7 @@ button {
         background-color: #1c1c1c;
         font-size: 50px;
         font-weight: 600;
-        color: #555EAB;
+        color: #8E362C;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -449,7 +492,7 @@ button {
         width: 100%;
         height: 60px;
         display: flex;
-        justify-content: space-between;
+        justify-content: start;
         align-items: center;
         flex-direction: row;
         padding: 3px;
@@ -484,7 +527,7 @@ button {
     .checkbox {
         width: 30px;
         height: 30px;
-        color: #555EAB;
+        color: #8E362C;
         cursor: pointer;
     }
 
@@ -497,10 +540,19 @@ button {
     .logo {
         width: 25%
     }
+
+    .links {
+        width: 20%;
+    }
 }
 
-/* @media only screen and (min-width:px) {
-    .logo {
-        width: 50%
+@media only screen and (max-width: 600px) {
+    .links {
+        display: none;
     }
-} */
+
+    .mobile_links {
+        display: none;
+    }
+
+}

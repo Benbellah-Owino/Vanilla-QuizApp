@@ -8,7 +8,9 @@ const checkMarks = document.querySelectorAll(".checkbox");
 const score_close = document.getElementById("close");
 const topic = document.getElementById("topic")
 
+const drop_nav = document.getElementById("mob_links");
 
+let active = false;
 let set = 0;
 let state = [];
 
@@ -146,10 +148,38 @@ checkMarks.forEach(check => {
 //Submit
 
 submit.addEventListener("click", () => {
-    sc_sc.innerHTML = parseInt(sc.textContent);
+    let netScore = parseInt(sc.textContent);
+    let stp1 = netScore / 20;
+    let final = stp1 * 100;
+    sc_sc.innerHTML = final;
     scorecard.style.display = "flex"
 })
 
 score_close.addEventListener("click", () => {
     location.reload();
 })
+
+
+
+const nav_btn = document.getElementById("mob_lin")
+
+
+function dropNav() {
+
+    console.log(drop_nav.classList)
+    if (active == false) {
+        console.log("Conains a")
+        active = !active;
+        drop_nav.classList.add("mobile_links_active")
+        drop_nav.classList.remove("mobile_links")
+
+    } else if (active == true) {
+        active = !active;
+        drop_nav.classList.add("mobile_links")
+        drop_nav.classList.remove("mobile_links_active")
+
+    }
+
+}
+
+nav_btn.addEventListener("click", dropNav)
