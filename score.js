@@ -273,13 +273,37 @@ checkMarks.forEach(check => {
     })
 });
 
-
+const sc_text = document.getElementById("sc_text");
 
 //Submit
 
 submit.addEventListener("click", () => {
     console.log("clicked")
+    let scoreCount = sc.textContent;
     sc_sc.innerHTML = parseInt(sc.textContent);
+    let text
+
+    if (scoreCount >= 0 && scoreCount <= 8) {
+        text = "You are pure.Few individuals fit into this group.";
+    }
+    else if (scoreCount >= 9 && scoreCount <= 44) {
+        text = "You are severely compromised in your purity, thus. You may have used harmful substances that lead to addiction, spent time behind bars, or engaged in public physical bonding.";
+    }
+    else if (scoreCount >= 45 && scoreCount <= 76) {
+        text = "Your innocence has been compromised, therefore. You've experienced multiple instances of terrible addiction behavior and / or legal issues."
+    }
+    else if (scoreCount >= 77 && scoreCount <= 93) {
+        text = "Implies that you are generally pure. You most likely moved down so more or committed to a loved one."
+    }
+    else if (scoreCount >= 94 && scoreCount <= 97) {
+        text = "It indicates are comparatively pure. Maybe you've kissed or held hands with someone."
+    }
+    else if (scoreCount >= 98 && scoreCount <= 100) {
+        text = "You are as pure. Few individuals fit into this group."
+    }
+
+    sc_text.textContent = text
+
     scorecard.style.display = "flex"
 })
 
