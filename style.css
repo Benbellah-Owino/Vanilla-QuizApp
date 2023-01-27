@@ -76,6 +76,7 @@ button {
 
 
 
+
 .title {
     font-size: 22px;
     color: #FCC250;
@@ -270,10 +271,12 @@ td {
     color: #8E362C;
 }
 
-.quiz_card:hover {
-    border-left: 1px solid #8E362C;
-    border-bottom: 1px solid #8E362C;
-    transition: 0.1s all ease;
+.quiz_card:hover,
+.quiz_card:hover>.quiz_title {
+    cursor: pointer;
+    background-color: #555eab;
+    color: #FCC250;
+    transition: 0.3s all ease-in-out;
 }
 
 .quizlets_inactive {
@@ -343,9 +346,9 @@ td {
     border: 1px solid #8E362C;
     box-shadow: 0px 4px 14px 0px #8E362C;
     position: fixed;
-    top: 40%;
+    top: 30%;
     left: auto;
-    height: 350px;
+    height: 450px;
     width: 400px;
     z-index: 5;
     background-color: #FCC250;
@@ -354,6 +357,7 @@ td {
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    color: #8E362C;
 }
 
 

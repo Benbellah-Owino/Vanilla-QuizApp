@@ -60,3 +60,69 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+
+
+#slider-container {
+    width: 100%;
+    background-color: #FCC250;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#slider-container p {
+    background-color: #FCC250;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 30px;
+}
+
+input[type=range]:focus {
+    outline: none;
+    border-radius: 14px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    animate: 0.2s;
+    border-radius: 14px;
+    background-image: linear-gradient(90deg, rgba(240, 42, 1, 1) 0%, rgba(247, 196, 9, 1) 58%, rgba(115, 230, 4, 1) 100%);
+    ;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7px;
+}
+
+@media only screen and (max-width: 768px) {
+    .switch {
+        width: 50px;
+        height: 24px;
+    }
+
+    .slider {
+        top: 2%;
+    }
+
+    .slider:before {
+        height: 20px;
+        width: 20px;
+    }
+}

@@ -71,16 +71,23 @@
     </div>
 
     <div class="score_card" id="score_card">
-        <h2>Your Score Is</h2>
-        <h1 id="sc_score">100%</h1>
-        <h3 id="sc_text"></h3>
+        <h2 class="nod">Your Score Is</h2>
+        <h1 id="sc_score" class="nod">100%</h1>
+        <div id="slider-container">
+            <p style="font-size:20px">&#128520;</p>
+            <input type="range" min="0" max="100" value="50" id="slider_score" disabled>
+            <p style="font-size:20px">&#128519;</p>
 
-        <a href="https://www.instagram.com/" class="sm_linkc insta" id="insta"><i class="fa-brands fa-instagram"></i>
+        </div>
+        <h3 id="sc_text" class="nod"></h3>
+
+        <a href="https://www.instagram.com/" class="sm_linkc insta nod" id="insta"><i
+                class="fa-brands fa-instagram"></i>
             Instagram</a>
-        <a href="https://web.facebook.com/" class="sm_linkc facebook" id="facebook"><i
+        <a href="https://web.facebook.com/" class="sm_linkc facebook nod" id="facebook"><i
                 class="fa-brands fa-facebook"></i>
             Facebook</a>
-        <a href="https://twitter.com/home" class="sm_linkc twitter" id="twitter"><i
+        <a href="https://twitter.com/home" class="sm_linkc twitter nod" id="twitter"><i
                 class="fa-brands fa-twitter"></i>Twitter</a>
         <button id="close" class="nav_btn">CLOSE</button>
     </div>

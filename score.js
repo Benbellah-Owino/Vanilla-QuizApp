@@ -9,20 +9,42 @@ const score_close = document.getElementById("close");
 const topic = document.getElementById("topic");
 const drop_nav = document.getElementById("mob_links");
 const dvrkMode = document.getElementById("dvrk");
+const slider = document.getElementById("slider_score");
 
 
-var elements = document.querySelectorAll("*");
+const elements = document.querySelectorAll("*");
 
+if (localStorage.getItem("mode") === "dark") {
+    for (var i = 0; i < elements.length; i++) {
+        if (!elements[i].classList.contains("nod")) {
+            elements[i].classList.add("darkmode");
+            dvrkMode.checked = true
+        }
+    }
+} else if (localStorage.getItem("mode") === "light") {
+    for (var i = 0; i < elements.length; i++) {
+        if (!elements[i].classList.contains("nod")) {
+            elements[i].classList.remove("darkmode");
+            dvrkMode.checked = false
+        }
+    }
+}
 
 
 dvrkMode.addEventListener("click", () => {
     if (dvrkMode.checked) {
         for (var i = 0; i < elements.length; i++) {
-            elements[i].classList.add("darkmode");
+            if (!elements[i].classList.contains("nod")) {
+                elements[i].classList.add("darkmode");
+                localStorage.setItem("mode", "dark")
+            }
         }
     } else if (!dvrkMode.checked) {
         for (var i = 0; i < elements.length; i++) {
-            elements[i].classList.remove("darkmode");
+            if (!elements[i].classList.contains("nod")) {
+                elements[i].classList.remove("darkmode");
+                localStorage.setItem("mode", "light")
+            }
         }
     }
 })
@@ -315,6 +337,7 @@ submit.addEventListener("click", () => {
     console.log("clicked")
     let scoreCount = sc.textContent;
     sc_sc.innerHTML = parseInt(sc.textContent);
+    slider.value = parseInt(sc.textContent);
     let text
 
     if (scoreCount >= 0 && scoreCount <= 8) {
