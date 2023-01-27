@@ -18,9 +18,13 @@ body {
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    font-size: 14px;
+    font-size: 16px;
 
+}
 
+.darkmode {
+    background-color: #2c2c2c;
+    color: #FCC250;
 }
 
 button {
@@ -41,10 +45,6 @@ button {
     height: 67px;
     width: 100%;
     padding: 0px;
-    background-color: #f8f4f4;
-    border-bottom: 0.5px solid #8E362C;
-
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,7 +117,8 @@ button {
     margin-top: 30px;
     padding: 10px;
     width: 80%;
-    height: 100px;
+    height: fit-content;
+
     /* background-color: #a4e6eb; */
 }
 
@@ -160,6 +161,7 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .twenty:hover {
@@ -177,15 +179,19 @@ button {
     align-items: center;
 }
 
+.grade_tile,
 .exp_head {
     width: 100%;
     background-color: #FCC250;
     color: #8E362C;
     text-align: center;
-    height: fit-content
+    height: fit-content;
+    margin-bottom: 10px;
 }
 
-.score_table {
+
+
+/* .score_table {
     width: 90%;
     border: 1px solid;
     border-collapse: collapse;
@@ -209,7 +215,7 @@ td {
 
 .scoreth {
     width: 10%;
-}
+} */
 
 /* Quiz Section */
 .questions {
@@ -254,6 +260,16 @@ td {
     padding: 3px;
 }
 
+.quiz_col1 {
+    background-color: #8E362C;
+    color: #FCC250;
+}
+
+.quiz_col2 {
+    background-color: #FCC250;
+    color: #8E362C;
+}
+
 .quiz_card:hover {
     border-left: 1px solid #8E362C;
     border-bottom: 1px solid #8E362C;
@@ -284,6 +300,14 @@ td {
     width: 30px;
     height: 30px;
     accent-color: #8E362C;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.checkbox2 {
+    width: 30px;
+    height: 30px;
+    accent-color: #FCC250;
     cursor: pointer;
     margin-left: 10px;
 }
@@ -421,7 +445,7 @@ td {
         align-items: center;
         flex-direction: column;
         height: 100vh;
-        font-size: 16px;
+        font-size: 20px;
 
     }
 
@@ -520,7 +544,6 @@ td {
         margin-top: 30px;
         padding: 10px;
         width: 80%;
-        height: 100px;
     }
 
     .words {
@@ -588,14 +611,6 @@ td {
         justify-content: space-between;
         align-items: center;
         flex-direction: row;
-    }
-
-    .checkbox {
-        width: 30px;
-        height: 30px;
-
-        cursor: pointer;
-        margin-right: 10px;
     }
 
 

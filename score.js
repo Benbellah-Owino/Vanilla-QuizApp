@@ -8,11 +8,31 @@ const checkMarks = document.querySelectorAll(".checkbox");
 const score_close = document.getElementById("close");
 const topic = document.getElementById("topic");
 const drop_nav = document.getElementById("mob_links");
+const dvrkMode = document.getElementById("dvrk");
+
+
+var elements = document.querySelectorAll("*");
+
+
+
+dvrkMode.addEventListener("click", () => {
+    if (dvrkMode.checked) {
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].classList.add("darkmode");
+        }
+    } else if (!dvrkMode.checked) {
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].classList.remove("darkmode");
+        }
+    }
+})
 
 let active = false;
 let arr = [];
 let set = 0;
 let state = [];
+
+let color = true;
 
 for (let x = 0; x < 10; x++) {
     arr.push([])
@@ -179,7 +199,7 @@ function createQuizeTiles(question, div) {
 
     const cb = document.createElement("input")
     cb.type = "checkbox"
-    cb.classList.add("checkbox")
+
     cb.addEventListener("change", () => {
         if (cb.checked) {
             sc.innerHTML = parseInt(sc.innerHTML) - 1;
@@ -187,9 +207,22 @@ function createQuizeTiles(question, div) {
             sc.innerHTML = parseInt(sc.innerHTML) + 1;
         }
     })
+    if (color === true) {
+        node.classList.add("quiz_col1");
+        text.classList.add("quiz_col1");
+        cb.classList.add("checkbox2")
+
+    } else if (color === false) {
+        node.classList.add("quiz_col2");
+        text.classList.add("quiz_col2");
+        cb.classList.add("checkbox")
+    };
+    color = !color
     node.appendChild(cb)
 
+
     div.appendChild(node)
+
 }
 let div1 = createQuizlets(0);
 
@@ -212,6 +245,7 @@ for (let x = 1; x <= arrc.length; x++) {
     }
 }
 
+console.log(state)
 
 
 function nextPage() {
@@ -322,14 +356,13 @@ function dropNav() {
         active = !active;
         drop_nav.classList.add("mobile_links_active")
         drop_nav.classList.remove("mobile_links")
-
     } else if (active == true) {
         active = !active;
         drop_nav.classList.add("mobile_links")
         drop_nav.classList.remove("mobile_links_active")
-
     }
 
 }
+
 
 nav_btn.addEventListener("click", dropNav)

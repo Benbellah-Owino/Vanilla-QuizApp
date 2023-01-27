@@ -7,9 +7,10 @@ const sc_sc = document.getElementById("sc_score")
 const checkMarks = document.querySelectorAll(".checkbox");
 const score_close = document.getElementById("close");
 const topic = document.getElementById("topic")
+const dvrkMode = document.getElementById("dvrk");
 
 const drop_nav = document.getElementById("mob_links");
-
+let color = true;
 let active = false;
 let set = 0;
 let state = [];
@@ -18,6 +19,22 @@ let fb = document.getElementById("facebook")
 let twitter = document.getElementById("twitter");
 let instagram = document.getElementById("insta");
 
+
+var elements = document.querySelectorAll("*");
+
+
+
+dvrkMode.addEventListener("click", () => {
+    if (dvrkMode.checked) {
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].classList.add("darkmode");
+        }
+    } else if (!dvrkMode.checked) {
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].classList.remove("darkmode");
+        }
+    }
+})
 
 
 
@@ -79,7 +96,19 @@ function createQuizeTiles(question, div) {
 
     const cb = document.createElement("input")
     cb.type = "checkbox"
-    cb.classList.add("checkbox")
+
+
+
+    if (color === true) {
+        node.classList.add("quiz_col1");
+        text.classList.add("quiz_col1");
+        cb.classList.add("checkbox2")
+
+    } else if (color === false) {
+        node.classList.add("quiz_col2");
+        text.classList.add("quiz_col2");
+        cb.classList.add("checkbox")
+    };
     cb.addEventListener("change", () => {
         if (cb.checked) {
             sc.innerHTML = parseInt(sc.innerHTML) - 1;
@@ -88,6 +117,7 @@ function createQuizeTiles(question, div) {
         }
     })
     node.appendChild(cb)
+    color = !color;
 
     div.appendChild(node)
 }

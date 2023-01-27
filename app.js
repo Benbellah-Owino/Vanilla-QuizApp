@@ -1,5 +1,7 @@
 const hundBtn = document.getElementById("hundred")
 const sc = document.getElementById("score")
+const dvrkMode = document.getElementById("dvrk");
+
 function openHundred() {
 
     window.open("hundred.html")
@@ -23,3 +25,20 @@ checkMarks.forEach(check => {
     }
 
 });
+
+
+var elements = document.querySelectorAll("*");
+
+
+
+dvrkMode.addEventListener("click", () => {
+    if (dvrkMode.checked) {
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].classList.add("darkmode");
+        }
+    } else if (!dvrkMode.checked) {
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].classList.remove("darkmode");
+        }
+    }
+})
